@@ -1,0 +1,12 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1747179461
+icon.svg::CompressedTexture2D/CompressedTexture2D::4155925827996414215::1746805196::1746805207::1::::<><><>0<>0<>456b41fa0ea61ab75b1d3bcba9fe05a1<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://materials/::1747179343
+dash_color.tres::StandardMaterial3D/StandardMaterial3D::2873676225240109470::1747092938::0::1::::<><><>0<>0<><>::
+ground_color.tres::StandardMaterial3D::2685656178693114087::1747179343::0::1::::<><><>0<>0<><>::
+player.tres::StandardMaterial3D::6014627275256694214::1747179343::0::1::::<><><>0<>0<><>::
+::res://scenes/::1747179343
+cenario.tscn::PackedScene::5089952837031251874::1747179343::0::1::::<><><>0<>0<><>::uid://bei7mn2nmblat::::res://materials/ground_color.tres<>uid://crxsbdsodf4q1::::res://materials/player.tres<>uid://brax4km2a41xa::::res://scripts/player.gd
+::res://scripts/::1747168944
+cenario.gd::GDScript/GDScript::5918014712371912404::1747168944::0::1::::<>Node3D<><>0<>0<><>::
+player.gd::GDScript/GDScript::3581079849395603774::1747168944::0::1::::<>MeshInstance3D<><>0<>0<><>::
