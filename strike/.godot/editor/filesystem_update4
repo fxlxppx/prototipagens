@@ -1,0 +1,5 @@
+res://scenes/world.tscn
+res://materials/labirinto_ground.tres
+res://materials/labirinto_wall.tres
+res://materials/player.tres
+res://scripts/player.gd
