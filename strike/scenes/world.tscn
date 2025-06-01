@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://bsb4q5eihxxf3"]
+[gd_scene load_steps=18 format=3 uid="uid://bsb4q5eihxxf3"]
 
 [ext_resource type="Material" uid="uid://dcd60vx0fso0n" path="res://materials/labirinto_ground.tres" id="1_rwgxs"]
 [ext_resource type="Material" uid="uid://dlnasm7n88qq1" path="res://materials/labirinto_wall.tres" id="2_4wyf3"]
 [ext_resource type="Material" uid="uid://csvj3jla85n1h" path="res://materials/player.tres" id="3_4wyf3"]
 [ext_resource type="Material" uid="uid://qqjjpmdwkdid" path="res://materials/parede_quebravel.tres" id="3_71j4m"]
 [ext_resource type="Script" uid="uid://cu4ln6xyqnbu2" path="res://scripts/player.gd" id="4_k0juu"]
+[ext_resource type="Script" uid="uid://bwqy2skick5wg" path="res://scripts/painel.gd" id="6_i7141"]
+[ext_resource type="Script" uid="uid://d1lvtg7cmaxrr" path="res://scripts/fim.gd" id="6_qfnet"]
 
 [sub_resource type="Environment" id="Environment_4wyf3"]
 background_mode = 1
@@ -17,6 +19,20 @@ background_color = Color(0.544251, 0.586976, 0.912328, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_qfnet"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rwgxs"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_71j4m"]
+radius = 0.555899
+height = 2.08448
+
+[sub_resource type="BoxMesh" id="BoxMesh_4mrxx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7r4gi"]
+size = Vector3(0.493652, 1.64709, 1.91057)
+
+[sub_resource type="BoxMesh" id="BoxMesh_i7141"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4mrxx"]
+size = Vector3(3.30685, 1, 0.831055)
 
 [node name="world" type="Node3D"]
 
@@ -138,5 +154,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 [node name="Camera3D" type="Camera3D" parent="player/twist/pitch"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 
+[node name="CharacterBody3D" type="CharacterBody3D" parent="player"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player/CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_71j4m")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 10, 0.176)
+
+[node name="painel" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3406, 0.368686, 0)
+script = ExtResource("6_i7141")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="painel"]
+transform = Transform3D(0.448604, 0, 0, 0, 1.77462, 0, 0, 0, 0.722322, 0, 0.619908, 0.107248)
+mesh = SubResource("BoxMesh_4mrxx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="painel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0432129, 0.672778, 0.108452)
+shape = SubResource("BoxShape3D_7r4gi")
+
+[node name="fim" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.28171, 1.08989, -9.08239)
+script = ExtResource("6_qfnet")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="fim"]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 0.5, 0.0831528, 0, 0.0488663)
+visible = false
+mesh = SubResource("BoxMesh_i7141")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fim"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0700531, 0, 0.0131836)
+shape = SubResource("BoxShape3D_4mrxx")
+
+[connection signal="body_entered" from="painel" to="painel" method="_on_body_entered"]
+[connection signal="body_entered" from="fim" to="fim" method="_on_body_entered"]

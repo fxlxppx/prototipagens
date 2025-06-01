@@ -2,4 +2,6 @@ res://scenes/world.tscn
 res://materials/labirinto_ground.tres
 res://materials/labirinto_wall.tres
 res://materials/player.tres
-res://scripts/player.gd
+res://materials/parede_quebravel.tres
+res://scripts/fim.gd
+res://scripts/painel.gd
