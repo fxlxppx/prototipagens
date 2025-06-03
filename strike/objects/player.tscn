@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://yqpivj2ckjtd"]
+
+[ext_resource type="Texture2D" uid="uid://bjllu5eflrki5" path="res://sprites/player-minigame1.png" id="1_eqqp1"]
+[ext_resource type="Script" uid="uid://e2ciqlu2pmmn" path="res://scripts/player.gd" id="1_ykyjo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ykyjo"]
+radius = 32.0
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 2
+script = ExtResource("1_ykyjo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(53, 46)
+scale = Vector2(8, 8)
+texture = ExtResource("1_eqqp1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(53, 44)
+shape = SubResource("CircleShape2D_ykyjo")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(53, -10)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

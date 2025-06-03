@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://bsb4q5eihxxf3"]
+[gd_scene load_steps=19 format=3 uid="uid://bsb4q5eihxxf3"]
 
+[ext_resource type="Script" uid="uid://bebpitx2yijm5" path="res://scripts/world.gd" id="1_4mrxx"]
 [ext_resource type="Material" uid="uid://dcd60vx0fso0n" path="res://materials/labirinto_ground.tres" id="1_rwgxs"]
 [ext_resource type="Material" uid="uid://dlnasm7n88qq1" path="res://materials/labirinto_wall.tres" id="2_4wyf3"]
 [ext_resource type="Material" uid="uid://csvj3jla85n1h" path="res://materials/player.tres" id="3_4wyf3"]
 [ext_resource type="Material" uid="uid://qqjjpmdwkdid" path="res://materials/parede_quebravel.tres" id="3_71j4m"]
-[ext_resource type="Script" uid="uid://cu4ln6xyqnbu2" path="res://scripts/player.gd" id="4_k0juu"]
+[ext_resource type="Script" uid="uid://cu4ln6xyqnbu2" path="res://scripts/player3D.gd" id="4_k0juu"]
 [ext_resource type="Script" uid="uid://bwqy2skick5wg" path="res://scripts/painel.gd" id="6_i7141"]
 [ext_resource type="Script" uid="uid://d1lvtg7cmaxrr" path="res://scripts/fim.gd" id="6_qfnet"]
 
@@ -35,6 +36,7 @@ size = Vector3(0.493652, 1.64709, 1.91057)
 size = Vector3(3.30685, 1, 0.831055)
 
 [node name="world" type="Node3D"]
+script = ExtResource("1_4mrxx")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4wyf3")

@@ -3,5 +3,10 @@ res://materials/labirinto_ground.tres
 res://materials/labirinto_wall.tres
 res://materials/player.tres
 res://materials/parede_quebravel.tres
-res://scripts/fim.gd
+res://scenes/node_2d.tscn
 res://scripts/painel.gd
+res://scripts/global.gd
+res://main.gd
+res://scripts/player.gd
+res://scripts/world.gd
+res://scripts/bullet.gd

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgcxt74iri3bs"]
+
+[ext_resource type="Script" uid="uid://jnu4wi4ithd5" path="res://scripts/enemy.gd" id="1_7jlpp"]
+[ext_resource type="Texture2D" uid="uid://djk17y834bprw" path="res://sprites/enemy-minigame1.png" id="1_882u1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7jlpp"]
+radius = 5.51277
+
+[node name="Enemy" type="CharacterBody2D"]
+scale = Vector2(8, 8)
+collision_layer = 2
+script = ExtResource("1_7jlpp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_882u1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7jlpp")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0.25, 6.875)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,52 +1,41 @@
-extends MeshInstance3D
+extends CharacterBody2D
 
-@export var velocidade = 2
+var bullet = preload("res://objects/bullet.tscn")
+var can_shoot = true
 
-#cam
-@onready var camera = $twist/pitch/Camera3D
-@onready var twist_pivot = $twist
-@onready var pitch_pivot = $twist/pitch
+var health = 3
 
-var mouse_sens = 0.001
-var twist_input = 0
-var pitch_input = 0
+signal player_hit(value)
 
-func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	
-
-func _physics_process(delta):
-	if Input.is_action_just_pressed("ui_cancel"):
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	# Movimentos básicos
-	var input_direction = Vector3.ZERO
-
-	if Input.is_action_pressed("frente"):
-		input_direction.z -= 1
-	if Input.is_action_pressed("tras"):
-		input_direction.z += 1
-	if Input.is_action_pressed("direita"):
-		input_direction.x += 1
+func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("esquerda"):
-		input_direction.x -= 1
-
-	if input_direction.length() > 0:
-		input_direction = input_direction.normalized()
-		
-		input_direction = input_direction.rotated(Vector3.UP, twist_pivot.global_rotation.y)
-
-		position += input_direction * velocidade * delta
-		
-	#cam stuff
-	twist_pivot.rotate_y(twist_input)
-	pitch_pivot.rotate_x(pitch_input)
-	pitch_pivot.rotation.x = clamp(pitch_pivot.rotation.x,deg_to_rad(-30),deg_to_rad(30))
-	twist_input = 0.0
-	pitch_input = 0.0
+		velocity.x -= 50
+	elif Input.is_action_pressed("direita"):
+		velocity.x += 50
+	else:
+		velocity.x = lerp(velocity.x, 0.0, 0.1)
 	
-func _unhandled_input(event):
-	if event is InputEventMouseMotion:
-		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-			twist_input = -event.relative.x * mouse_sens
-			pitch_input = -event.relative.y * mouse_sens
-		
+	if Input.is_action_pressed("atirar"):
+		if(can_shoot):
+			shoot()
+			$Timer.start(0.1)
+			can_shoot = false
+
+	velocity.x = clamp(velocity.x, -500, 500)
+	
+	move_and_slide()
+
+func shoot():
+	var b = bullet.instantiate()
+	get_parent().add_child(b)
+	b.global_position = $Marker2D.global_position
+	
+func take_damage():
+	health -= 1
+	emit_signal("player_hit", health)
+	if health == 0:
+		queue_free()
+
+func _on_timer_timeout() -> void:
+	$Timer.stop()
+	can_shoot = true

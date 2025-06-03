@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://ymaun5o2exdi"]
+
+[ext_resource type="Script" uid="uid://c3v6rfgn6avkf" path="res://main.gd" id="1_epypp"]
+[ext_resource type="PackedScene" uid="uid://yqpivj2ckjtd" path="res://objects/player.tscn" id="1_wtcfe"]
+[ext_resource type="PackedScene" uid="uid://f0qo7axfx4yx" path="res://objects/wall.tscn" id="2_0e48y"]
+[ext_resource type="PackedScene" uid="uid://cafe3w7fhuxca" path="res://objects/background.tscn" id="2_0hol4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_epypp"]
+font_size = 27
+font_color = Color(0.639216, 0.929412, 0.976471, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0hol4"]
+font_size = 27
+font_color = Color(1, 0.301961, 0.270588, 1)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_epypp")
+
+[node name="Background" parent="." instance=ExtResource("2_0hol4")]
+position = Vector2(577, 324)
+
+[node name="Player" parent="." instance=ExtResource("1_wtcfe")]
+position = Vector2(541, 547)
+
+[node name="Wall" parent="." instance=ExtResource("2_0e48y")]
+position = Vector2(24, 430)
+
+[node name="Wall2" parent="." instance=ExtResource("2_0e48y")]
+position = Vector2(1129, 429)
+
+[node name="LeftSpawnPosition" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 3.0
+offset_top = -90.0
+offset_right = 43.0
+offset_bottom = -50.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="RightSpawnPosition" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1111.0
+offset_top = -90.0
+offset_right = 1151.0
+offset_bottom = -50.0
+grow_horizontal = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Score" type="Label" parent="CanvasLayer"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 111.0
+offset_bottom = 47.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_epypp")
+
+[node name="HP" type="Label" parent="CanvasLayer"]
+offset_left = 9.0
+offset_top = 52.0
+offset_right = 75.0
+offset_bottom = 89.0
+text = "HP: 3"
+label_settings = SubResource("LabelSettings_0hol4")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
