@@ -1,0 +1,14 @@
+MeshInstance3D
+Camera3D
+SpringArm3D
+Node3D
+CollisionShape3D
+Area3D
+StaticBody3D
+CharacterBody3D
+RigidBody3D
+DirectionalLight3D
+WorldEnvironment
+OmniLight3D
+TextureRect
+SpotLight3D

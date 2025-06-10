@@ -1,0 +1,15 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1749588621
+icon.svg::CompressedTexture2D/CompressedTexture2D::7032818415861583326::1687500006::1743308782::1::::<><><>0<>0<>dd6c99c057555cfc95324d22429cc33e<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://Cenas/::1749571456
+predio.tscn::PackedScene::6993707806604762684::1749571456::0::1::::<><><>0<>0<><>::uid://oq54lg3mxqhy::::res://Materiais/caixa.tres<>uid://c8ws6kdnoa0p4::::res://Materiais/pilares.tres<>uid://yom2xuxpox1v::::res://Materiais/gato.tres<>uid://c4kkkb28221y8::::res://Scripts/gato.gd<>uid://brxqncvl8est3::::res://Scripts/caixa.gd<>uid://ct6opmn0x3d4t::::res://Materiais/tabua.tres<>uid://2ru7xyhw3iwy::::res://Scripts/queda.gd
+::res://Materiais/::1749562117
+caixa.tres::StandardMaterial3D::1017547741118474430::1749562117::0::1::::<><><>0<>0<><>::
+gato.tres::StandardMaterial3D::1714211596217023013::1749562117::0::1::::<><><>0<>0<><>::
+pilares.tres::StandardMaterial3D::7135638313988747327::1749562117::0::1::::<><><>0<>0<><>::
+tabua.tres::StandardMaterial3D::6171302583222359849::1749562117::0::1::::<><><>0<>0<><>::
+::res://Scripts/::1749571446
+caixa.gd::GDScript/GDScript::3628106539119713978::1749482129::0::1::::<>RigidBody3D<><>0<>0<><>::
+gato.gd::GDScript::6829586734066064161::1749571446::0::1::::<>CharacterBody3D<><>0<>0<><>::
+queda.gd::GDScript/GDScript::1931465930767093700::1749507812::0::1::::<>Area3D<><>0<>0<><>::
+::res://video/::1749421146
