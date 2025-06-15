@@ -2,5 +2,6 @@ res://Cenas/predio.tscn
 res://Materiais/caixa.tres
 res://Materiais/pilares.tres
 res://Materiais/gato.tres
+res://Materiais/chao.tres
 res://Materiais/tabua.tres
-res://Scripts/gato.gd
+res://Scripts/gatinhos.gd

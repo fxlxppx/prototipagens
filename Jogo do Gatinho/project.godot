@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Jogo do Gatinho"
+run/main_scene="uid://c6v2l0yt8fvnw"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

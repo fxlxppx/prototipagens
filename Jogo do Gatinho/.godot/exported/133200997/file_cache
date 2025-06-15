@@ -1,5 +1,6 @@
-res://character_body_2d.tscn::5bbb3a1a48b803078a5be326c54188e7::1687500006::res://.godot/exported/133200997/export-25eb6ab7203e76730ffb59dd2891996c-character_body_2d.scn
-res://inimigo_1.tscn::80d5c0316c8b25d5c2b8f563e1b27a85::1687500006::res://.godot/exported/133200997/export-efca9c8e58e47a03469f0c7ce2a96203-inimigo_1.scn
-res://jogador.tscn::f042a0df586e41eb1fecad82d06a337e::1688793444::res://.godot/exported/133200997/export-ab728630216deba8a7ddb2f7666c2ebc-jogador.scn
-res://leve_1.tscn::54b6e8289a261ba1a206433f98722b91::1688793444::res://.godot/exported/133200997/export-b96bb24a9f48d3f810aac2731674d206-leve_1.scn
-res://menu.tscn::db5b83e331b40f915ad6038fa35de6f0::1688793445::res://.godot/exported/133200997/export-a4951207776b25ee5c8b2b05c1463587-menu.scn
+res://Cenas/predio.tscn::c336a437e2fa2378e92910f1ae8427ee::1749992885::res://.godot/exported/133200997/export-c1d47a8429cf9b60bd81201db427a04b-predio.scn
+res://Materiais/caixa.tres::33f0431cdb3548aeefd8e8857488d342::1749991980::res://.godot/exported/133200997/export-7920ce40df6cb0bd4db1a4bed144af5e-caixa.res
+res://Materiais/chao.tres::2bad1391c8baf543df4cc6d4d32a6ed3::1749991980::res://.godot/exported/133200997/export-aaa13aed015ad1679d6072a0e4bdc931-chao.res
+res://Materiais/gato.tres::30668064ed1ef7ada4002b54bd99dc96::1749991980::res://.godot/exported/133200997/export-a5f9bfe50519b6938ebc421a07fffdaa-gato.res
+res://Materiais/pilares.tres::d88aa728cfb11c327acc853d7ab975a5::1749991980::res://.godot/exported/133200997/export-c568523d27577dc5ea784ed247fc60f0-pilares.res
+res://Materiais/tabua.tres::fafb98ea3fb7f3d02e0433f9d17895c4::1749991980::res://.godot/exported/133200997/export-d49335cbaffc71a08ed9058306b911f0-tabua.res
